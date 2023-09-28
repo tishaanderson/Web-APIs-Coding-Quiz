@@ -47,6 +47,10 @@ h1 {
   background-color: black;
 }
 
+#start-btn:hover {
+  cursor: pointer;
+}
+
 #timer {
   background-color: black;
   align-self: center;
@@ -62,7 +66,7 @@ main {
 
 }
 
-/* questions section */
+/* questions container */
 #question-container {
   border-style: solid;
   border-color: green;
@@ -71,10 +75,26 @@ main {
   width: 75%;
   margin: 0 auto;
   display: flex;
-  
+  flex-direction: column;
 }
 
-/* answer section */
+/* question text */
+#question {
+  margin: 30px auto;
+  font-size: 50px;
+}
+
+/* answer container */
+#answer-container {
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+  height: 30%;
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  
+}
 
 /* bottom sections displaying whether answers are right/wrong */
 
