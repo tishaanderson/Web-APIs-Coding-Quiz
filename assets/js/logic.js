@@ -20,16 +20,53 @@ var timeSpan = document.getElementById("time-left");
 var startBtn = document.getElementById("start-btn");
 var questionContainer = document.getElementById("question-container");
 
-var timeLeft = questions.length * 1;
+var timeLeft = questions.length * 5;
 var currentQuestionIndex = 0;
+var score = 0;
 
 console.log(questions);
+console.log(currentQuestionIndex);
 
 function displayTime() {
   timeSpan.textContent = timeLeft;
 }
 
-startBtn.addEventListener("click", function (event) {
+console.log(timeLeft);
+console.log(displayTime);
+
+function displayQuestion() {
+  if (currentQuestionIndex < questions.length) {
+
+    var currentQuestion = questions[currentQuestionIndex];
+    questionContainer.innerHTML = " "; 
+    
+    var questionText = document.createElement("h2");
+    questionText.textContent = currentQuestion.question;
+    questionContainer.appendChild(questionText);
+
+    var choiceContainer = document.createElement("section");
+    choiceContainer.className = "choice-container";
+
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
+
+      var choice = document.createElement("button");
+      choice.id = "choice-buttons";
+      choice.textContent = currentQuestion.choices[i];
+
+      choice.addEventListener('click', function () {
+
+        currentQuestionIndex++;
+        displayQuestion();
+      });
+      choiceContainer.appendChild(choice);
+    }
+    questionContainer.appendChild(choiceContainer);
+  } else {
+    questionContainer.innerHTML = "Congrats! You finished the quiz!! Your score = " + score + " out of " + questions.length;
+  }
+  
+}
+startBtn.addEventListener('click', function (event) {
   event.preventDefault();
 
   displayTime();
@@ -45,42 +82,3 @@ startBtn.addEventListener("click", function (event) {
     }
   }, 1000);
 });
-
-function displayQuestion() {
-  if (currentQuestionIndex < questions.length) {
-    var currentQuestion = questions[currentQuestionIndex];
-    questionContainer.innerHTML = " ";
-
-    var questionText = document.createElement("p");
-    questionText.textContent = currentQuestion.question;
-    questionContainer.appendChild(questionText);
-
-    for (var i = 0; i < currentQuestion.choices.length; i++) {
-      var choice = document.createElement("button");
-      choice.textContent = currentQuestion.choices[i];
-      choice.addEventListener("click", function() {
-//add logic to check if the answer is correct here
-//and proceed to the next question
-        
-      currentQuestionIndex++;
-      displayQuestion();
-      });
-      questionContainer.appendChild(choice);
-    }
-  }
-
-}
-
-console.log(questions.choices);
-// var questions = document.querySelectorAll("question:")
-
-// function addChoiceEventListeners() {
-//   var choiceInputs = document.querySelectorAll('input[name="choice"');
-//   for (var i = 0; i < choiceInputs.length)
-// }
-
-// function showQuestion() {
-//   if (displayTime){
-
-//   }
-// }

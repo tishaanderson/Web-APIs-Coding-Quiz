@@ -27,8 +27,8 @@ header {
 
 }
 
-h1 {
-
+h2 {
+font-size: 45px;
 }
 
 
@@ -76,16 +76,17 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 /* question text */
-#question {
+#question-text {
   margin: 30px auto;
   font-size: 50px;
-}
+  }
 
 /* answer container */
-#answer-container {
+/* #choice-container {
   border-style: solid;
   border-color: white;
   border-width: 5px;
@@ -93,6 +94,33 @@ main {
   width: 75%;
   margin: 0 auto;
   display: flex;
+} */
+
+/* #choice-list {
+  margin: 30px;
+  font-size: 10px;
+} */
+
+#result-container {
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  height: 10%;
+  width: 35%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+}
+
+#choice-buttons {
+  display: flex;
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+  height: 30%;
+  width: 75%;
+  margin: 15px auto;
+
   
 }
 
