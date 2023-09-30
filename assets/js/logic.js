@@ -34,6 +34,9 @@ function displayTime() {
 console.log(timeLeft);
 console.log(displayTime);
 
+
+//get questions and answers to display here
+
 function displayQuestion() {
   if (currentQuestionIndex < questions.length) {
 
@@ -42,10 +45,10 @@ function displayQuestion() {
     
     var questionText = document.createElement("h2");
     questionText.textContent = currentQuestion.question;
-    questionContainer.appendChild(questionText);
+    questionContainer.appendChild(questionText); //link the actual question to pop up in it's header in the question container
 
     var choiceContainer = document.createElement("section");
-    choiceContainer.className = "choice-container";
+    choiceContainer.className = "choice-container"; //created a class for the choices so i could style them with css the way that i wanted
 
     for (var i = 0; i < currentQuestion.choices.length; i++) {
 
@@ -55,17 +58,23 @@ function displayQuestion() {
 
       choice.addEventListener('click', function () {
 
+        if(this.textContent === currentQuestion.answer) {
+          score++;
+        } else {
+          timeLeft -= 10;
+        }
+
         currentQuestionIndex++;
         displayQuestion();
       });
       choiceContainer.appendChild(choice);
     }
-    questionContainer.appendChild(choiceContainer);
+    questionContainer.appendChild(choiceContainer); //link the questions and the choices
   } else {
     questionContainer.innerHTML = "Congrats! You finished the quiz!! Your score = " + score + " out of " + questions.length;
   }
   
-}
+} // get timer to begin count down when start button is clicked
 startBtn.addEventListener('click', function (event) {
   event.preventDefault();
 
@@ -75,7 +84,7 @@ startBtn.addEventListener('click', function (event) {
   var timeInterval = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(timeInterval);
-      alert("Time's Up -- You Lost! :( ");
+      questionContainer.innerHTML = "Time's Up -- You Lost! :( ";
     } else {
       timeLeft--;
       displayTime();
