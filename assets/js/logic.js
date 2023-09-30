@@ -20,8 +20,7 @@ var timeSpan = document.getElementById("time-left");
 var startBtn = document.getElementById("start-btn");
 var questionContainer = document.getElementById("question-container");
 
-
-var timeLeft = questions.length * 5;
+var timeLeft = questions.length * 10;
 var currentQuestionIndex = 0;
 var score = 0;
 // var isFlashing = false; //would like to add this to make timer blink when time is deducted for answering question but can't get it to work
@@ -30,15 +29,13 @@ function displayTime() {
   timeSpan.textContent = timeLeft;
 }
 
-
 //get questions and answers to display here
 
 function displayQuestion() {
   if (currentQuestionIndex < questions.length) {
-
     var currentQuestion = questions[currentQuestionIndex];
-    questionContainer.innerHTML = " "; 
-    
+    questionContainer.innerHTML = " ";
+
     var questionText = document.createElement("h2");
     questionText.textContent = currentQuestion.question;
     questionContainer.appendChild(questionText); //link the actual question to pop up in it's header in the question container
@@ -47,15 +44,12 @@ function displayQuestion() {
     choiceContainer.className = "choice-container"; //created a class for the choices so i could style them with css the way that i wanted
 
     for (var i = 0; i < currentQuestion.choices.length; i++) {
-
       var choice = document.createElement("button");
       choice.id = "choice-buttons";
       choice.textContent = currentQuestion.choices[i];
 
-      choice.addEventListener('click', function () {
-
-        if(this.textContent === currentQuestion.answer) {
-
+      choice.addEventListener("click", function () {
+        if (this.textContent === currentQuestion.answer) {
           score++;
 
           var correctAnswer = document.createElement("h3");
@@ -64,7 +58,6 @@ function displayQuestion() {
 
           this.parentElement.appendChild(correctAnswer);
         } else {
-
           var wrongAnswer = document.createElement("h4");
           wrongAnswer.id = "result-wrong";
           wrongAnswer.textContent = "Wrong!!";
@@ -73,21 +66,27 @@ function displayQuestion() {
         }
 
         currentQuestionIndex++;
-        setTimeout(function(){
+        setTimeout(function () {
           displayQuestion();
-        }, 3000);
+        }, 1500);
       });
 
       choiceContainer.appendChild(choice);
     }
     questionContainer.appendChild(choiceContainer); //link the questions and the choices
   } else {
-    questionContainer.innerHTML = "Congrats! You finished the quiz!! Your score = " + score + " out of " + questions.length;
-    }
-  
-} // get timer to begin count down when start button is clicked
-startBtn.addEventListener('click', function (event) {
+    questionContainer.innerHTML =
+      "Congrats! You finished the quiz!! Your score = " +
+      score +
+      " out of " +
+      questions.length;
+  }
+} 
+
+// get timer to begin count down when start button is clicked
+startBtn.addEventListener("click", function (event) {
   event.preventDefault();
+  startBtn.disabled = true;
 
   displayTime();
   displayQuestion();
@@ -102,3 +101,8 @@ startBtn.addEventListener('click', function (event) {
     }
   }, 1000);
 });
+
+// function getScore() {
+//   var scoreTotal = localStorage.getItem("score");
+// }
+// getScore();
