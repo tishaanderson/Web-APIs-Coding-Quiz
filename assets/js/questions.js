@@ -1,17 +1,17 @@
 var questions = [
   {
-    question: "question 1",
-    choices: ["choice 1", "choice 2", "choice 3"],
-    answer: "choice 1",
+    question: "Inside which HTML element to we put JavaScript?",
+    choices: ["<div>", "<script>", "<h1>"],
+    answer: "<script>",
   },
   {
-    question: "question 2",
-    choices: ["choice 4", "choice 5", "choice 6"],
-    answer: "choice 4",
+    question: "Which value type does a boolean primitive contain?",
+    choices: ["true/false", "number", "string"],
+    answer: "true/false",
   },
   {
-    question: "question 3",
-    choices: ["choice 7", "choice 8", "choice 9"],
-    answer: "choice 7",
+    question: "Which of these is NOT a type of Loop in JavaScript?",
+    choices: ["while", "for", "hoola"],
+    answer: "hoola",
   },
 ];
