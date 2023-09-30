@@ -20,19 +20,15 @@ var timeSpan = document.getElementById("time-left");
 var startBtn = document.getElementById("start-btn");
 var questionContainer = document.getElementById("question-container");
 
+
 var timeLeft = questions.length * 5;
 var currentQuestionIndex = 0;
 var score = 0;
-
-console.log(questions);
-console.log(currentQuestionIndex);
+// var isFlashing = false; //would like to add this to make timer blink when time is deducted for answering question but can't get it to work
 
 function displayTime() {
   timeSpan.textContent = timeLeft;
 }
-
-console.log(timeLeft);
-console.log(displayTime);
 
 
 //get questions and answers to display here
@@ -59,20 +55,35 @@ function displayQuestion() {
       choice.addEventListener('click', function () {
 
         if(this.textContent === currentQuestion.answer) {
+
           score++;
+
+          var correctAnswer = document.createElement("h3");
+          correctAnswer.id = "result-good";
+          correctAnswer.textContent = "Good job!";
+
+          this.parentElement.appendChild(correctAnswer);
         } else {
+
+          var wrongAnswer = document.createElement("h4");
+          wrongAnswer.id = "result-wrong";
+          wrongAnswer.textContent = "Wrong!!";
+          this.parentElement.appendChild(wrongAnswer);
           timeLeft -= 10;
         }
 
         currentQuestionIndex++;
-        displayQuestion();
+        setTimeout(function(){
+          displayQuestion();
+        }, 3000);
       });
+
       choiceContainer.appendChild(choice);
     }
     questionContainer.appendChild(choiceContainer); //link the questions and the choices
   } else {
     questionContainer.innerHTML = "Congrats! You finished the quiz!! Your score = " + score + " out of " + questions.length;
-  }
+    }
   
 } // get timer to begin count down when start button is clicked
 startBtn.addEventListener('click', function (event) {

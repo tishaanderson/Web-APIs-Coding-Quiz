@@ -112,6 +112,16 @@ main {
   justify-content: center;
 }
 
+#result-good {
+  font-size: 40px;
+  color: green;
+}
+
+#result-wrong {
+  font-size: 40px;
+  color: red;
+}
+
 #choice-buttons {
   display: flex;
   border-style: solid;
