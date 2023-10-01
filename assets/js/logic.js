@@ -74,12 +74,6 @@ function displayQuestion() {
       choiceContainer.appendChild(choice);
     }
     questionContainer.appendChild(choiceContainer); //link the questions and the choices
-  } else {
-    questionContainer.innerHTML =
-      "Congrats! You finished the quiz!! Your score = " +
-      score +
-      " out of " +
-      questions.length;
   }
 } 
 
@@ -92,7 +86,14 @@ startBtn.addEventListener("click", function (event) {
   displayQuestion();
 
   var timeInterval = setInterval(function () {
-    if (timeLeft <= 0) {
+    if (currentQuestionIndex >= questions.length) { // Check if all questions are answered
+      clearInterval(timeInterval); // Stop the timer
+      questionContainer.innerHTML = "Your score = " +
+        score +
+        " out of " +
+        questions.length;
+      displayPercentage(score, questions.length); // Display the percentage
+    } else if (timeLeft <= 0) {
       clearInterval(timeInterval);
       questionContainer.innerHTML = "Time's Up -- You Lost! :( ";
     } else {
