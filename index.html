@@ -11,22 +11,21 @@
 
 
   <title>Coding Quiz</title>
+
 </head>
 <body>
 
-<!-- main header showcasing "coding quiz game" -->
+  <!-- main header -->
   <header class="header">
 
     <h1>Welcome to the Coding Quiz Game!!</h1>
 
   </header>
 
-
-
-<!-- nav bar section with link to high scores and timer-->
+  <!-- nav bar section with link to high scores and timer-->
   <nav class="nav-bar">
 
-    <button id="scores-btn">High Scores</button>
+    <button id="scores-btn" onclick="window.location.href = 'highscores.html';" >High Scores</button>
 
     <button id="start-btn">Start Game!</button>
     
@@ -34,47 +33,29 @@
 
   </nav>
 
+  <main >
 
-<main >
+    <!-- quiz box-->
+    <section id="question-container">
 
-<!-- questions box-->
-  <section id="question-container">
+      <h2 id="question-text">Are you ready to play? Click the start button to begin game</h2>
 
-    <h2 id="question-text">Are you ready to play? Click the start button to begin game</h2>
+      <!-- answer choices -->
 
+      <!-- result sections displaying whether answers are right/wrong  -->
+      <h2 id="result-container"></h2>
 
-<!-- answer choices -->
-    <!-- <section id="choice-container">
-      <!-- <h3 id="choice-list">Choices Here</h3> -->
-
-
-
-<!-- bottom sections displaying whether answers are right/wrong  -->
-    <section id="result-container">
-      <!-- <h4 id="result">Results Here</h4> -->
-
-
+      <!-- extra section if need-be -->
+      <h2></h2>
 
     </section>
 
+  </main>
 
-
-    </section>
-
-  </section>
-
-
-  <!-- extra section if need-be -->
-  <section></section>
-
-</main>
-  
-
-
-
-<script src="./assets/js/questions.js"></script>
-<script src="./assets/js/logic.js"></script>
-
+  <!-- JavaScript file links -->
+  <script src="./assets/js/questions.js"></script>
+  <script src="./assets/js/highscores.js"></script>
+  <script src="./assets/js/logic.js"></script>
 
 </body>
 </html>
