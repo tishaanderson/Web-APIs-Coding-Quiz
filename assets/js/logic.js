@@ -68,7 +68,7 @@ function displayQuestion() {
         currentQuestionIndex++;
         setTimeout(function () {
           displayQuestion();
-        }, 1500);
+        }, 1000);
       });
 
       choiceContainer.appendChild(choice);

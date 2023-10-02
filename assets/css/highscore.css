@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(46, 43, 43);
+  color: white;
+  line-height: 2.5;
+  font-family: 'Changa', sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-family: 'Skranji', cursive;
+}
+
+header {
+  display: flex;
+  /* flex: 1; */
+  justify-content: center;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-style: dashed;
+  border-color: white;
+  border-width: 8px;
+  
+  font-size: 60px;
+
+}
+
+h2 {
+font-size: 30px;
+/* display: inline-flex; */
+}
+
+main {
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+  width: 100%;
+  height: 60vh;
+  /* height: 50%; */
+  display: inline-flex;
+}
+
+#new-player-info {
+  height: 100%;
+  width: 40%;
+  /* display: inline-flex; */
+  border-style: solid;
+  border-color: green;
+  border-width: 5px;
+
+}
+
+#high-scores-container {
+  height: 100%;
+  width: 60%;
+  border-style: solid;
+  border-color: green;
+  border-width: 5px;
+  margin-left: 2px;
+}
+
+footer {
+  text-align: center;
+}
