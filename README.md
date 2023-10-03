@@ -2,7 +2,7 @@
 
 ## Description
 
-
+I am building a quiz revolving around the fundamentals of JavaScript. The assessment will include multiple choice questions and allow the player to submit their score to the Highscore Board once they finish.
 
 ### User Story
 
@@ -30,3 +30,12 @@ THEN I can save my initials and my score
 
 ##### Links
 
+https://github.com/tishaanderson/Web-APIs-Coding-Quiz
+
+https://tishaanderson.github.io/Web-APIs-Coding-Quiz/
+
+##### Demo
+
+![Quiz Home Page](quiz-game-home.png)
+
+![Highscores Page](highscores-page.png)
