@@ -19,15 +19,13 @@ header {
   border-style: dashed;
   border-color: white;
   border-width: 8px;
-  
+}
+
+h1 {
   font-size: 60px;
-
 }
 
-h2 {
-font-size: 30px;
-/* display: inline-flex; */
-}
+
 
 main {
   border-style: solid;
@@ -35,23 +33,27 @@ main {
   border-width: 5px;
   width: 100%;
   height: 60vh;
-  /* height: 50%; */
   display: inline-flex;
+  text-align: center;
+}
+
+h2 {
+font-size: 50px;
+margin-top: 20px;
+/* display: inline-flex; */
 }
 
 #new-player-info {
   height: 100%;
-  width: 40%;
-  /* display: inline-flex; */
+  width: 50%;
   border-style: solid;
   border-color: green;
   border-width: 5px;
-
 }
 
 #high-scores-container {
   height: 100%;
-  width: 60%;
+  width: 50%;
   border-style: solid;
   border-color: green;
   border-width: 5px;

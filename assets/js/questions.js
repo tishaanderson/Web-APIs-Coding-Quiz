@@ -1,6 +1,6 @@
 var questions = [
   {
-    question: "Inside which HTML element to we put JavaScript?",
+    question: "Inside which HTML tag do we put JavaScript code?",
     choices: ["<div>", "<script>", "<h1>"],
     answer: "<script>",
   },
@@ -13,5 +13,15 @@ var questions = [
     question: "Which of these is NOT a type of Loop in JavaScript?",
     choices: ["while", "for", "hoola"],
     answer: "hoola",
+  },
+  {
+    question: "What is the symbol used to build an array?",
+    choices: ["%", "{}", "[]"],
+    answer: "[]",
+  },
+  {
+    question: "Which of these methods is used for joining various arrays into a single array?",
+    choices: ["concat()", "toString()", "join()"],
+    answer: "concat()",
   },
 ];
